@@ -1,5 +1,6 @@
 <script>
   import StatusBadge from './StatusBadge.svelte';
+  import { base } from '$app/paths';
 
   /**
    * @type {{
@@ -33,7 +34,7 @@
     <div class="actions">
       <a
         class="icon-btn"
-        href="/loans/{loan.id}/edit"
+        href="{base}/loans/{loan.id}/edit"
         aria-label="Editar empréstimo"
         title="Editar"
       >
