@@ -1,5 +1,6 @@
 <script>
   import Button from '$lib/components/Button.svelte';
+  import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -39,7 +40,7 @@
     <p class="subtitle">Controle de empréstimos entre amigos</p>
   </div>
 
-  <Button href="/loans" block>Ver empréstimos →</Button>
+  <Button href="{base}/loans" block>Ver empréstimos →</Button>
 </section>
 
 <style>

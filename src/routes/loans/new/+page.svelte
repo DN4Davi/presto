@@ -1,12 +1,13 @@
 <script>
   import { fade } from 'svelte/transition';
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import { addLoan } from '$lib/stores/loans.svelte.js';
   import LoanForm from '$lib/components/LoanForm.svelte';
 
   function handleSubmit(data) {
     addLoan(data);
-    goto('/loans');
+    goto(base + '/loans');
   }
 </script>
 
@@ -15,7 +16,7 @@
 </svelte:head>
 
 <div class="head">
-  <a class="back" href="/loans">← Voltar</a>
+  <a class="back" href="{base}/loans">← Voltar</a>
   <h1>Novo empréstimo</h1>
 </div>
 

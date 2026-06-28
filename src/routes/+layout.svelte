@@ -2,6 +2,7 @@
   import '../app.css';
   import { onMount } from 'svelte';
   import { onNavigate } from '$app/navigation';
+  import { base } from '$app/paths';
 
   onMount(async () => {
     const { registerSW } = await import('virtual:pwa-register');
@@ -23,7 +24,7 @@
 
 <div class="app">
   <header class="header">
-    <a class="brand" href="/">Presto</a>
+    <a class="brand" href="{base}/">Presto</a>
   </header>
 
   <main class="container">

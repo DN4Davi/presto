@@ -4,6 +4,7 @@
   import LoanCard from '$lib/components/LoanCard.svelte';
   import Button from '$lib/components/Button.svelte';
   import ConfirmDialog from '$lib/components/ConfirmDialog.svelte';
+  import { base } from '$app/paths';
 
   let pendingDeleteId = $state(null);
 
@@ -23,7 +24,7 @@
 
 <div class="toolbar">
   <h1>Empréstimos</h1>
-  <Button href="/loans/new">+ Novo empréstimo</Button>
+  <Button href="{base}/loans/new">+ Novo empréstimo</Button>
 </div>
 
 {#if loans.items.length === 0}
@@ -36,7 +37,7 @@
     </svg>
     <p class="empty-title">Nenhum empréstimo ainda</p>
     <p class="empty-text">Quando você emprestar algo, registre aqui para não esquecer quem está com a sua coisa.</p>
-    <Button href="/loans/new">+ Novo empréstimo</Button>
+    <Button href="{base}/loans/new">+ Novo empréstimo</Button>
   </div>
 {:else}
   <div class="stats">

@@ -2,6 +2,7 @@
   import { fade } from 'svelte/transition';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import { getLoan, updateLoan, deleteLoan } from '$lib/stores/loans.svelte.js';
   import LoanForm from '$lib/components/LoanForm.svelte';
   import Button from '$lib/components/Button.svelte';
@@ -14,12 +15,12 @@
 
   function handleSubmit(data) {
     updateLoan(id, data);
-    goto('/loans');
+    goto(base + '/loans');
   }
 
   function handleDelete() {
     deleteLoan(id);
-    goto('/loans');
+    goto(base + '/loans');
   }
 </script>
 
@@ -28,7 +29,7 @@
 </svelte:head>
 
 <div class="head">
-  <a class="back" href="/loans">← Voltar</a>
+  <a class="back" href="{base}/loans">← Voltar</a>
   <h1>Editar empréstimo</h1>
 </div>
 
@@ -52,7 +53,7 @@
 {:else}
   <div class="not-found">
     <p>Empréstimo não encontrado.</p>
-    <Button href="/loans">Voltar à listagem</Button>
+    <Button href="{base}/loans">Voltar à listagem</Button>
   </div>
 {/if}
 
